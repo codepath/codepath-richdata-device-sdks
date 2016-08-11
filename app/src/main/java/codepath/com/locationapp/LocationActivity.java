@@ -89,12 +89,13 @@ public class LocationActivity extends AppCompatActivity implements
                 // min time the API should wait before sending updates, if available
                 // Updates could be available sooner due to a another app requesting location updates at a faster rate
                 .setFastestInterval(FASTEST_INTERVAL);
-        
+
         // Request location updates
         LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient,
                 mLocationRequest, this);
     }
 
+    @Override
     public void onLocationChanged(Location location) {
         // New location has now been determined
         String msg = "Updated Location: " +
